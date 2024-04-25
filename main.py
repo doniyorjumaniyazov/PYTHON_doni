@@ -172,21 +172,152 @@
 # записанных на новой строчке каждое. Здесь каждое
 # число – это масса соответствующего арбуза     
 
-n = int(input())
-max = -1
-min = 3001
+# n = int(input())
+# max = -1
+# min = 3001
 
-for i in range(n):
-    x = int(input())
-    if x > max:
-        max = x
-    if x < min:        
-        min = x
+# for i in range(n):
+#     x = int(input())
+#     if x > max:
+#         max = x
+#     if x < min:        
+#         min = x
         
         
-print(max, min)
+# print(max, min)
 
 
+# Список
+# list_1 = []
+# list_1 = list()
+# print(list_1)
+# list_1 = []
+# list_1 = [1, 2, 3]
+# print(list_1)
 
+# list_1 = []
+# list_1 = [1, 2, 3]
+# print(*list_1)     # для убрат [] нужно ставит *
+
+# for i in list_1:
+#     print(i)
+#     print(len(list_1)) # это для определение длина спискоа
+#     print(list_1[2]) # для определеня значение указанный номера элемента
+
+# list = [2, 7]
+# print(list)
+# list.append(6)       #.append добавление элемента в спике следуюшим
+# print(list)
+
+# list = []
+# print(list)
+
+# for i in range(6):
+#     list.append(i)
+#     print(list) # этот код начиная с пустый [] до сначала 0 потом 0, 1 потом ... 0,1,2,3,4,5 шесть штук элементов
+
+
+# функциия удаление это .pop  примери
+
+# list = [2, 36, -16, 0]
+# print(list.pop()) # если один раз удаляет последный элемент в списке это 0
+# print(list)
+# print(list.pop())
+# print(list)
+# print(list.pop())
+# print(list)
+
+#Удаление конкретного элемента
+
+# list = [2, 36, -16, 0]
+# print(list.pop(2)) # функсия удалить конкретного элементо здес второй индек (0 1 2 3)
+# print(list)
+
+# для добовление конкретный элемент конкретного позиции тогда исползуется
+
+# list = [2, 55, -18, 1, -26]
+# print(list.insert(2,31))  # этот функция добавит 31 месте 2 ого индекса
+# print(list)
+
+# Кортеж и свойства ползуется ( ) пара чисел или строк
+# t = ()
+# print(type(t))
+
+# t = (1)
+# print(type(t))
+
+# t = (1, 2,)
+# print(type(t))
+
+# v = [1, 2, 3]
+# print(v)
+# print(type(v))
+
+# v = tuple(v)
+# print(v)
+# print(type(v))
+
+# d = {}
+# d = dict()
+
+# d['q'] = 'qwerty'
+# print(d)
+
+# d['w'] = 'werty'
+# print(d)
+
+# print(d['w'])
+
+
+# Множнство {} using
+ 
+# colors = {'red', 'white', 'green'}
+# print(colors)
+
+# colors.add('red')
+# print(colors)
+
+# colors.add('yellow')
+# print(colors)
+# colors.discard('white') # удаляет выше указанный цвет
+# print(colors) 
+# colors.clear()
+# print(colors)
+
+# a = {1, 2, 6, 3, 11}
+# b = {3, 7, 9 , 2, 0}
+
+# c = a.copy()    #копирования а как с будеть
+# print(c)
+# n = a.union(b) # обединение двухух значение как один
+# print(n)
+
+# l = a.intersection(b) # пересечение
+# print(l)
+# s = a.difference(b) # найдет не стиковку разнмцу здес приоритете cтроке'a' если начинат b.difference(a)
+# print(s)
+
+# # Замароженный множества
+
+# f = {2, 0, 6}
+# r = frozenset(f)
+# print(r)
+
+# создать список состаяший четныйх чисел диапазоне от 1 до 100 сначала обычный вариант потом list comprehinsion 
+
+# list = []
+# for i in range(1, 101):
+#     list.append(i)
+# print(list)
+    
+list = [i for i in range(1, 101)]    # это от 1 до 100 подряд
+print(list)
   
-  
+list = [i for i in range(1, 101) if i % 2 ==0]    # это от 1 до 100 подряд но тоько четный чисел
+print(list)  
+
+list = [(i, i) for i in range(1, 101) if i % 2 ==0]    # это от 1 до 100 подряд но тоько четный чисел еще это кортеж состоявшый из пара чисел
+print(list)  
+
+list = [i * 2 for i in range(1, 101) if i % 2 ==0]    # это от 1 до 100 подряд но тоько четный можно умножит делить и так далее
+print(list)
