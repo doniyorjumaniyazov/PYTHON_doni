@@ -310,14 +310,121 @@
 #     list.append(i)
 # print(list)
     
-list = [i for i in range(1, 101)]    # это от 1 до 100 подряд
-print(list)
+# list = [i for i in range(1, 101)]    # это от 1 до 100 подряд
+# print(list)
   
-list = [i for i in range(1, 101) if i % 2 ==0]    # это от 1 до 100 подряд но тоько четный чисел
-print(list)  
+# list = [i for i in range(1, 101) if i % 2 ==0]    # это от 1 до 100 подряд но тоько четный чисел
+# print(list)  
 
-list = [(i, i) for i in range(1, 101) if i % 2 ==0]    # это от 1 до 100 подряд но тоько четный чисел еще это кортеж состоявшый из пара чисел
-print(list)  
+# list = [(i, i) for i in range(1, 101) if i % 2 ==0]    # это от 1 до 100 подряд но тоько четный чисел еще это кортеж состоявшый из пара чисел
+# print(list)  
 
-list = [i * 2 for i in range(1, 101) if i % 2 ==0]    # это от 1 до 100 подряд но тоько четный можно умножит делить и так далее
-print(list)
+# list = [i * 2 for i in range(1, 101) if i % 2 ==0]    # это от 1 до 100 подряд но тоько четный можно умножит делить и так далее
+# print(list)
+
+# Напишите программу, которая принимает на вход
+# строку, и отслеживает, сколько раз каждый символ
+# уже встречался. Количество повторов добавляется к
+# символам с помощью постфикса формата _n.
+# Input: a a a b c a a d c d d
+# Output: a a_1 a_2 b c a_3 a_4 d c_1 d_1 d_2
+# Для решения данной задачи используйте функцию
+# .split()
+
+
+# input_string = "a a a b c a a d c d d"  # Пример ввода
+# words = input_string.split()  # Разбиваем строку на слова
+# char_count = {}  # Создаем словарь для отслеживания количества встреч каждого символа
+
+# # Проходимся по каждому слову
+# for word in words:
+#     # Проходимся по каждому символу в слове
+#     for char in word:
+#         # Обновляем счетчик для текущего символа
+#         char_count[char] = char_count.get(char, 0) + 1
+
+# output_string = ""  # Создаем пустую строку для вывода результата
+
+# # Проходимся по каждому слову
+# for word in words:
+#     # Проходимся по каждому символу в слове
+#     for char in word:
+#         # Формируем строку вывода, добавляя символ и его количество повторений
+#         output_string += char + "_" + str(char_count[char]) + " "
+#         # Уменьшаем счетчик повторений для текущего символа
+#         char_count[char] -= 1
+
+# # Выводим результат
+# print("Output:", output_string.strip())
+
+# следуюший вариант решений
+# stroka = input().split()      # функция split() переобразует строку в массив
+# result = {}          # kolichstvo povtaryayushiy elementa
+
+
+# for i in stroka:
+#     if i in result:
+#         print(f'{i}_{result[i]}', end = ' ')
+#     else:
+#         print(i, end = ' ')
+#     result[i] = result.get(i, 0) + 1        
+
+
+# # Пользователь вводит текст(строка). Словом считается # последовательность непробельных символов идущих
+# # подряд, слова разделены одним или большим числом# пробелов. Определите, сколько различных слов
+# # содержится в этом тексте.
+# # Input: She sells sea shells on the sea shore The shells # that she sells are sea shells I'm sure.So if she sells sea
+# # shells on the sea shore I'm sure that the shells are sea # shore shells
+# # Output: 13
+
+# input_text = "She sells sea shells on the sea shore The shells that she sells are sea shells I'm sure.So if she sells sea shells on the sea shore I'm sure that the shells are sea shore shells"
+
+# # Разбиваем текст на слова с помощью пробелов в качестве разделителя
+# words = input_text.split()
+
+# # Создаем множество для хранения уникальных слов
+# unique_words = set(words)
+
+# # Выводим количество уникальных слов
+# print(len(unique_words))
+
+
+# n = int(input())
+# Другой вариант
+
+
+stroka = input().split()
+words = set()
+for i in stroka:
+    words.add(i.lower())
+print(len(words))
+
+
+# Ваня и Петя поспорили, кто быстрее решит
+# следующую задачу: “Задана последовательность
+# неотрицательных целых чисел. Требуется определить
+# значение наибольшего элемента
+# последовательности, которая завершается первымф
+# встретившимся нулем (число 0 не входит в
+# последовательность)”. Однако 2 друга оказались не
+# такими смышлеными. Никто из ребят не смог до
+# конца сделать это задание. Они решили так: у кого
+# будет меньше ошибок в коде, тот и выиграл спор. За
+# помощью товарищи обратились к Вам, студентам.
+
+
+
+numbers = [3, 7, 2, 9, 0, 5, 4]  # Пример входной последовательности
+
+
+max_value = float('-inf')  # Инициализируем максимальное значение как отрицательную бесконечность
+
+for num in numbers:
+    if num == 0:
+        break  # Если встретили ноль, выходим из цикла
+    if num > max_value:
+        max_value = num  # Обновляем максимальное значение, если текущее число больше
+
+print("Максимальное значение в последовательности:", max_value)
+1
+    
