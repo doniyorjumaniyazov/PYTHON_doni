@@ -393,11 +393,11 @@
 # Другой вариант
 
 
-stroka = input().split()
-words = set()
-for i in stroka:
-    words.add(i.lower())
-print(len(words))
+# stroka = input().split()
+# words = set()
+# for i in stroka:
+#     words.add(i.lower())
+# print(len(words))
 
 
 # Ваня и Петя поспорили, кто быстрее решит
@@ -413,18 +413,36 @@ print(len(words))
 # помощью товарищи обратились к Вам, студентам.
 
 
+# находим сумму ot 1 do n элементов с помошю функции в пайтон
 
-numbers = [3, 7, 2, 9, 0, 5, 4]  # Пример входной последовательности
+# def sum_numbers(n):
+#     summa = 0
+#     for i in range(1, n+1):
+#         summa +=i
+#     print(summa)
+# sum_numbers(8)
 
 
-max_value = float('-inf')  # Инициализируем максимальное значение как отрицательную бесконечность
+#другой вариант
 
-for num in numbers:
-    if num == 0:
-        break  # Если встретили ноль, выходим из цикла
-    if num > max_value:
-        max_value = num  # Обновляем максимальное значение, если текущее число больше
-
-print("Максимальное значение в последовательности:", max_value)
-1
+# def sum_numbers(n):
+#     summa = 0
+#     for i in range(1, n+1):  # почему n+1 потомучто функция не берет последный элемент а нам нужен n элемент
+#         summa +=i
+#     print(summa)
     
+# n = int(input())
+# sum_numbers(n)
+
+
+# следуший задача преставим нам дано несколко буквы нужен чтобы оно отразилась как един
+
+def sum_str(*args):
+    result = ''
+    for i in args:
+        result += i
+    return result
+print(sum_str('a', 'b', 'c', 'd'))    
+
+
+        
