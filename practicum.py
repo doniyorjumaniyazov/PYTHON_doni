@@ -321,20 +321,41 @@
 # На входе:
 
 # Заданные значения
-var1 = '5 4' 
-var2 = '1 3 5 7 9' 
-var3 = '2 3 4 5'
+# var1 = '5 4' 
+# var2 = '1 3 5 7 9' 
+# var3 = '2 3 4 5'
 
-# Разбиваем строку на отдельные элементы
-n, m = map(int, var1.split())
-set1 = set(map(int, var2.split()))
-set2 = set(map(int, var3.split()))
+# # Разбиваем строку на отдельные элементы
+# n, m = map(int, var1.split())
+# set1 = set(map(int, var2.split()))
+# set2 = set(map(int, var3.split()))
 
-# Находим пересечение множеств и сортируем его
-intersection = sorted(set1.intersection(set2))
+# # Находим пересечение множеств и сортируем его
+# intersection = sorted(set1.intersection(set2))
 
-# Выводим результат
-print(*intersection)
+# # Выводим результат
+# print(*intersection)
+
+#  Напишите  функции программу, которая на вход принимает
+# два числа A и B, и возводит число А в целую степень B с
+# помощью рекурсии.
+
+# def f(a, b):
+#     if b == 0:
+#         return 1
+#     elif b > 0:
+#         return a * f(a, b - 1)
+#     else:
+#         return 1 / f(a, -b)
+
+# a = 2
+# b = 10
+# print(f(a, b))
+
+
+
+
+
 
 
 
@@ -372,3 +393,223 @@ print(*intersection)
 #     max_harvest = max(max_harvest, current_harvest)
 
 # print(max_harvest)
+
+# Напишите рекурсивную функцию sum(a, b), возвращающую сумму двух целых неотрицательных чисел. Из всех арифметических операций допускаются только +1 и -1. Также нельзя использовать циклы.
+
+# Функция не должна ничего выводить, только возвращать значение.
+
+# def sum(a, b):
+    
+#     if a == 0:
+#         return b
+#     elif b == 0:
+#         return a
+    
+#     else:
+#         return sum(a - 1, b) + 1
+
+# # Пример использования:
+# result = sum(3, 5)
+# print(result)  # Выведет: 8
+
+# Определить индексы элементов массива (списка), значения которых принадлежат заданному диапазону 
+# (т.е. не меньше заданного минимума и не больше заданного максимума).
+# На вход подается список с элементамиlist_1 и границы диапазона в виде чисел min_number, max_number.
+
+# def find_indices_in_range(list_1, min_number, max_number):
+#     indices = []
+#     for i, num in enumerate(list_1):
+#         if min_number < num < max_number:
+#             indices.append(i)
+#     return indices
+
+# list_1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+# min_number = 0
+# max_number = 10
+
+# result_indices = find_indices_in_range(list_1, min_number, max_number)
+# print(*result_indices, sep='\n')
+
+# Заполните массив элементами арифметической прогрессии. Её первый элемент a1 , 
+# разность d и количество элементов n будет задано автоматически. 
+# Формула для получения n-го члена прогрессии: an = a1 + (n-1) * d.
+
+# def arithmetic_progression(a1, d, n):
+#     progression = []
+#     for i in range(n):
+#         progression.append(a1 + i * d)
+#     return progression
+
+# a1 = 2
+# d = 3
+# n = 4
+
+# progression = arithmetic_progression(a1, d, n)
+# for num in progression:
+#     print(num)
+
+
+# У вас есть код, который вы не можете менять(так часто бывает, когда код в глубине
+# программы используется множество раз и вы не хотите ничего сломать):
+# transformation = <???>
+# values = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29] # или любой другой список
+# transormed_values = list(map(transformation, values))
+# Единственный способ вашего взаимодействия с этим кодом - посредством задания
+# функции transformation.
+# Однако вы поняли, что для вашей текущей задачи вам не нужно никак преобразовывать
+# список значений, а нужно получить его как есть.
+# Напишите такое лямбда-выражение transformation, чтобы transformed_values получился
+# копией values.
+
+# transformation = lambda x: x
+# values = [2, 3, 5, 7, 13]
+# transformed_values = list(map(transformation, values))
+# if values == transformed_values:
+#     print('ok')
+# else:
+#     print('fail')
+
+# Планеты вращаются вокруг звезд по эллиптическим орбитам.
+# Назовем самой далекой планетой ту, орбита которой имеет
+# самую большую площадь. Напишите функцию
+# find_farthest_orbit(list_of_orbits), которая среди списка орбит
+# планет найдет ту, по которой вращается самая далекая
+# планета. Круговые орбиты не учитывайте: вы знаете, что у
+# вашей звезды таких планет нет, зато искусственные спутники
+# были были запущены на круговые орбиты. Результатом
+# функции должен быть кортеж, содержащий длины полуосей
+# эллипса орбиты самой далекой планеты. Каждая орбита
+# представляет из себя кортеж из пары чисел - полуосей ее
+# эллипса. Площадь эллипса вычисляется по формуле S = pi*a*b,
+# где a и b - длины полуосей эллипса. При решении задачи
+# используйте списочные выражения. Подсказка: проще всего
+# будет найти эллипс в два шага: сначала вычислить самую
+# большую площадь эллипса, а затем найти и сам эллипс,
+# имеющий такую площадь. Гарантируется, что самая далекая
+# планета ровно одна
+
+# from math import pi   #можем импортировать число пи таким образом s = pi*a*b
+
+# def find_farthest_orbit(list_of_orbits):
+#     list_1 = [i for i in list_of_orbits if i[0] != i[1]]
+#     list_s = [(pi * i[0] * i[1]) for i in list_1]
+#     max_s = list_s.index(max(list_s))     # index() найдет значение каждый индекс номера
+    
+#     return list_1[max_s]
+    
+
+# orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+# print(*find_farthest_orbit(orbits))
+
+# Напишите функцию same_by(characteristic, objects), которая
+# проверяет, все ли объекты имеют одинаковое значение
+# некоторой характеристики, и возвращают True, если это так.
+# Если значение характеристики для разных объектов
+# отличается - то False. Для пустого набора объектов, функция
+# должна возвращать True. Аргумент characteristic - это
+# функция, которая принимает объект и вычисляет его
+# характеристику.
+
+# def same_by(characteristic, objects): 
+#     result = True
+#     list1 = [characteristic(x) for x in objects]
+#     for i in range(len(list1) - 1):
+#         if list1[i] != list1[i+1]:
+#             result = False
+#     return result    
+    
+    
+# values = [0, 2, 10, 6]        
+# if same_by(lambda x: x % 2, values):
+#     print('same')
+# else:
+#    print('different')
+
+# Напишите функцию print_operation_table(operation, num_rows=9, num_columns=9),
+# которая принимает в качестве аргумента функцию, вычисляющую элемент по номеру строки и
+# столбца. Аргументы num_rows и num_columns указывают число строк и столбцов таблицы,
+# которые должны быть распечатаны. Нумерация строк и столбцов идет с единицы (подумайте,
+# почему не с нуля). Примечание: бинарной операцией называется любая операция, у которой
+# ровно два аргумента, как, например, у операции умножения.
+    
+def print_operation_table(operation, num_rows=9, num_columns=9):
+    # Проверяем, что размерности таблицы больше 2
+    if num_rows < 2 or num_columns < 2:
+        print("ОШИБКА! Размерности таблицы должны быть больше 2!")
+        return
+
+    # Печатаем таблицу
+    for i in range(1, num_rows + 1):
+        row = []
+        for j in range(1, num_columns + 1):
+            row.append(str(operation(i, j)))
+        print(" ".join(row))
+
+# Пример использования
+print_operation_table(lambda x, y: x * y, 3, 3)
+
+
+# Винни-Пух попросил Вас посмотреть, есть ли в его стихах ритм. Поскольку
+# разобраться в его кричалках не настолько просто, насколько легко он их придумывает, Вам
+# стоит написать программу. Винни-Пух считает, что ритм есть, если число слогов (т.е. число
+# гласных букв) в каждой фразе стихотворения одинаковое. Фраза может состоять из одного
+# слова, если во фразе несколько слов, то они разделяются дефисами. Фразы отделяются друг
+# от друга пробелами. Стихотворение Винни-Пух вбивает в программу с клавиатуры. В ответе
+# напишите “Парам пам-пам”, если с ритмом все в порядке и “Пам парам”, если с ритмом все не
+# в порядке
+# Ввод: Вывод:
+# пара-ра-рам рам-пам-папам па-ра-па-дам Парам пам-пам
+
+def check_rhythm(stroka):
+    # Определяем функцию для подсчета гласных букв в слове
+    def count_vowels(word):
+        vowels = 'аеёиоуыэюя'
+        return sum(1 for char in word if char in vowels)
+    
+    # Разделяем строку на фразы
+    phrases = stroka.split()
+    
+    # Проверяем количество фраз
+    if len(phrases) < 2:
+        return "Количество фраз должно быть больше одной!"
+    
+    # Подсчитываем количество гласных в каждой фразе
+    syllables_count = [sum(count_vowels(word) for word in phrase.split('-')) for phrase in phrases]
+    
+    # Проверяем, одинаковое ли количество гласных в каждой фразе
+    if all(count == syllables_count[0] for count in syllables_count):
+        return "Парам пам-пам"
+    else:
+        return "Пам парам"
+
+# Пример использования
+stroka = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
+print(check_rhythm(stroka))
+
+
+vowels = ['а', 'е', 'ё', 'и', 'й', 'о', 'у', 'ы', 'э', 'ю', 'я']
+phrases = stroka.split()
+if len(phrases) < 2:
+ print('Количество фраз должно быть больше одной!')
+else:
+ countVowels = []
+
+ for i in phrases:
+  countVowels.append(len([x for x in i if x.lower() in vowels]))
+
+ if countVowels.count(countVowels[0]) == len(countVowels):
+  print('Парам пам-пам')
+ else:
+  print('Пам парам')
+
+
+    
+
+
+
+
+
+
+
+
+
