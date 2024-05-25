@@ -618,20 +618,34 @@
 # выведена только один раз (перестановка чисел новую
 # пару не дает).
 
-k = int(input())
-list1 = list()
+# k = int(input())
+# list1 = list()
 
-for i in range(k):
-    summa = 0
-    for j in range(1, i // 2 +1):
-        if i % j == 0:
-            summa += j
-    list1.append(tuple([i, summa]))   
-for i in range(len(list1)):
-    for j in range(i, len(list1)):
-        if i != j and list1[i][0] == list1[j][1] and list1[i][1] == list1[j][0]:
-            print(list1[i])
+# for i in range(k):
+#     summa = 0
+#     for j in range(1, i // 2 +1):
+#         if i % j == 0:
+#             summa += j
+#     list1.append(tuple([i, summa]))   
+# for i in range(len(list1)):
+#     for j in range(i, len(list1)):
+#         if i != j and list1[i][0] == list1[j][1] and list1[i][1] == list1[j][0]:
+#             print(list1[i])
         
+# Создать телефонный справочник с
+# возможностью импорта и экспорта данных в
+# формате .txt. Фамилия, имя, отчество, номер
+# телефона - данные, которые должны находиться
+# в файле.
+# 1. Программа должна выводить данные
+# 2. Программа должна сохранять данные в
+# текстовом файле
+# 3. Пользователь может ввести одну из
+# характеристик для поиска определенной
+# записи(Например имя или фамилию
+# человека)
+# 4. Использование функций. Ваша программа
+# не должна быть линейной
             
     
     
