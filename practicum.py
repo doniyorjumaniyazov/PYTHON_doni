@@ -350,8 +350,7 @@
 #         return 1
 #     elif b > 0:
 #         return a * f(a, b - 1)
-#     else:
-#         return 1 / f(a, -b)
+
 
 # a = 2
 # b = 10

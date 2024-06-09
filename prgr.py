@@ -183,11 +183,74 @@
 # Программа должна вывести одно целое число - максимальное количество ягод, которое может собрать собирающий модуль, 
 # находясь перед некоторым кустом грядки.
 
+# pupil_rating = [1, 2, 3, 4, 4, 3]
+# pupil_rating_1 = []
+# max_n = max(pupil_rating)
+# min_n = min(pupil_rating)
+# for i in pupil_rating:
+#     if pupil_rating[i] == max_n:
+#         pupil_rating[i] = min_n
+#     pupil_rating_1.append(pupil_rating[i])
+# print(pupil_rating_1)
+
+# def simple_number(n):
+#     if n % 2 ==0:
+#         True
+# print(simple_number(10))
+
+# Определить индексы элементов массива (списка), значения которых принадлежат заданному диапазону 
+# (т.е. не меньше заданного минимума и не больше заданного максимума).
+# На вход подается список с элементамиlist_1 и границы диапазона в виде чисел min_number, max_number
+list_1 = [-5, 9, 0, 3, -1, -2, 1, 4, -2, 10, 2, 0, -9, 8, 10, -9, 0, -5, -5, 7]
+min_number = 0
+max_number = 10
+
+# def find_indices_in_range(list_1, min_number, max_number):
+#     indices = []
+#     for i, num in enumerate(list_1):
+#         if min_number <= num <= max_number:
+#             indices.append(i)
+#     return indices
+
+# result_indices = find_indices_in_range(list_1, min_number, max_number)
+# print(*result_indices, sep='\n')
 
 
+# другой вариант
 
-
+# indices = []
+# for index in range(len(list_1)):
+#     value = list_1[index]
     
+#     if min_number <= value <= max_number:
+#         indices.append(index)
+# print(*indices, sep='\n') 
+         
+# Заполните массив элементами арифметической прогрессии. Её первый элемент a1 , разность d и количество элементов 
+# n будет задано автоматически. Формула для получения n-го члена прогрессии: an = a1 + (n-1) * d.
+
+# Пример
+
+# На входе:
+
+
+# a1 = 2
+# d = 3
+# n = 4  
+# def arf_progres(a1, d, n):
+#     progres = []
+#     for i in range(n):
+#         progres.append(a1 + i* d)
+#     return progres  
+               
+# progres = arf_progres(2, 3, 4)
+# for num in progres:
+#     print(num)
+  
+
+
+        
+
 
 
 
