@@ -610,4 +610,19 @@
 # print(res)  # Output: [1, 3, 4, 5, 12]
     
     
-   
+class Dog():
+#	 """Простая модель собаки."""
+    def __init__(self, name, age):
+# """Инициализирует атрибуты name и age."""
+     self.name = name
+     self.age = age
+
+def sit(self):
+# """Собака садится по команде."""
+       print(self.name.title() + " is now sitting.")
+def roll_over(self):
+# """Собака перекатывается по команде."""
+        print(self.name.title() + " rolled over!")   
+grut = Dog('reks',12)
+print("its a good " + grut.name + " .")
+print("it is " + str(grut.age) + " .")
